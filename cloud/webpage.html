@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <! -- ============== Navigation ============ -->
+    <div class = "container" id="container">
+        <div class ="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="bag-check-outline"></ion-icon></span>
+                        <span class="title">Chores MS</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../view/dashboard.php">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../admin/chore_mgt_view.php" >
+                        <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
+                        <span class="title">Chore Management</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../admin/assign_chore_view.php">
+                        <span class="icon"><ion-icon name="apps-outline"></ion-icon></span>
+                        <span class="title">Chore Assignments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../login/logout_view.php">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">logout</span>
+                    </a>
+                </li>
+
+
+                
+            </ul>
+        </div>
+        <! -- ============== Main ============ -->
+        <div class = "main">
+            <div class = "topbar">
+                <div class="toggle">
+                    <ion-icon name="list-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="../images/customer01.jpg" alt="">
+                </div>
+            </div>
+
+        <div class="chores-mg">
+            <div class="details">
+                <div class="chorelist">
+                    <div class="cardHeader">
+                        <h2>Recent Assignment</h2>
+                        <a href='../admin/assign_chore_view.php' class="btn"> View all assignments </a>
+                    </div>
+
+                    <!-- Chore List Table -->
+                    <table class="bordered-table">
+                        <thead>
+                            <tr>
+                                <th>Chore Name</th>
+                                <th>Assigned By</th>
+                                <th>Date Assigned</th>
+                                <th>Date Due</th>
+                                <th>Chore Status</th>
+                            </tr>   
+                        </thead>
+                        <tbody>
+                            <?php
+                            // Include the chore function file
+                            include_once "../home_fxn/Recent_fxn.php"
+
+                            
+
+
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
