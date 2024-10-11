@@ -17,6 +17,10 @@ class Visit(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     visit_count = db.Column(db.Integer, nullable=False)
 
+# Create tables
+with app.app_context():
+    db.create_all()
+
 # Home route with Redis counter
 @app.route("/")
 def home():
